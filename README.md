@@ -1,2 +1,64 @@
-# Monitoring-Check-HP-iLO
-Nagios / Monitoring Check for HP iLO helath states
+<p align="center">
+  <a href="https://varilan.de" target="_blank"><img src="https://varilan.de/wp-content/uploads/2023/06/Varilan-Color-Logo-h150.png"></a>
+</p>
+
+# Powershell for Nagios to check HPE iLO Health Summary
+This monitoring check get the iLO health over Powershell and checks the parameters. 
+
+## Requirements
+
+ 1. Reacable HPE iLO Webinterface
+ 2. Powershell HPEiLOCmdlets
+
+Howto install the official HPEiLOCmdlets over Powershell. 
+
+**Run with admin rights:**
+
+    Install-Module -Name HPEiLOCmdlets
+Or download manually:  https://www.powershellgallery.com/packages/HPEiLOCmdlets/
+
+## Parameters  
+| Parmeter | Description |  
+|----------|----------------------------------|  
+| ILO_IP | iLO webinterface IP |  
+| ILO_USER | iLO User to Query Health Summary |  
+| ILO_PASS | iLo user super secure password |
+
+## Examples:  
+
+### Status: OK
+  
+`PS .\check_hpe_ilo_health_summary.ps1 -ILO_IP 10.10.10.10 -ILO_USER Administrator -ILO_PASS supersecurepass  
+--> OK: all ok`
+
+### Status: Warning/Critical  
+`PS .\check_hpe_ilo_health_summary.ps1 -ILO_IP 10.10.10.10 -ILO_USER Administrator -ILO_PASS supersecurepass  
+--> CRITICAL: Storage Status = Warning`
+
+## Which values are checked?
+This script checks the values from the iLO Health Summary. To see details, log in to the iLO web interface.
+
+    Get-HPEiLOHealthSummary -Connection $connection;
+
+	
+	AgentlessManagementService : Ready
+	BatteryStatus              : OK
+	BIOSHardwareStatus         : OK
+	FanStatus                  : OK
+	FanRedundancy              : Redundant
+	MemoryStatus               : OK
+	NetworkStatus              : OK
+	PowerSuppliesStatus        : OK
+	PowerSuppliesRedundancy    : Redundant
+	PowerSuppliesMismatch      : No
+	ProcessorStatus            : OK
+	StorageStatus              : OK
+	TemperatureStatus          : OK
+
+
+
+### Run manually
+
+    $connection = Connect-HPEiLO 10.10.10.10 -Username Administrator -Password supersecurepass -DisableCertificateAuthentication;
+    Get-HPEiLOHealthSummary -Connection $connection;
+
