@@ -17,6 +17,7 @@ Howto install the official HPEiLOCmdlets over Powershell.
 
     Install-Module -Name HPEiLOCmdlets
 Or download manually:  https://www.powershellgallery.com/packages/HPEiLOCmdlets/
+
 Offical HP Downloadpage: https://support.hpe.com/connect/s/softwaredetails?language=en_US&collectionId=MTX-9cb80bdda3824b3d
 
 ## Parameters  
@@ -66,6 +67,7 @@ This script checks the values from the iLO Health Summary. To see details, log i
 
 ## Copyright & Support
 Copyright by <a href="https://varilan.de" target="_blank">Varilan GmbH</a>.
+
 For support, please contact us via our Website www.varilan.de
 
 Licensed by MIT license.
