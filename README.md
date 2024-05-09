@@ -2,8 +2,9 @@
   <a href="https://varilan.de" target="_blank"><img src="https://varilan.de/wp-content/uploads/2023/06/Varilan-Color-Logo-h150.png"></a>
 </p>
 
-# Powershell for Nagios to check HPE iLO Health Summary
-This monitoring check get the iLO health over Powershell and checks the parameters. 
+# Monitoring / Nagios Check for the HPE iLO Health Summary - Powershell / Windows
+This monitoring check get the iLO health over Powershell and checks the parameters.
+
 
 ## Requirements
 
@@ -62,3 +63,8 @@ This script checks the values from the iLO Health Summary. To see details, log i
     $connection = Connect-HPEiLO 10.10.10.10 -Username Administrator -Password supersecurepass -DisableCertificateAuthentication;
     Get-HPEiLOHealthSummary -Connection $connection;
 
+## Copyright & Support
+Copyright by <a href="https://varilan.de" target="_blank">Varilan GmbH</a>.
+For support, please contact us via our Website www.varilan.de
+
+Licensed by MIT license.
