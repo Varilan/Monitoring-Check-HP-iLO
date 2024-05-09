@@ -2,7 +2,7 @@
   <a href="https://varilan.de" target="_blank"><img src="https://varilan.de/wp-content/uploads/2023/06/Varilan-Color-Logo-h150.png"></a>
 </p>
 
-# Monitoring / Nagios Check for the HPE iLO Health Summary - Powershell / Windows
+# Monitoring / Nagios check for the HPE iLO Health Summary
 This monitoring check get the iLO health over Powershell and checks the parameters.
 
 
@@ -17,6 +17,7 @@ Howto install the official HPEiLOCmdlets over Powershell.
 
     Install-Module -Name HPEiLOCmdlets
 Or download manually:  https://www.powershellgallery.com/packages/HPEiLOCmdlets/
+Offical HP Downloadpage: https://support.hpe.com/connect/s/softwaredetails?language=en_US&collectionId=MTX-9cb80bdda3824b3d
 
 ## Parameters  
 | Parmeter | Description |  
